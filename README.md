@@ -1,8 +1,7 @@
 <h1 align="center"> 1 Million Quiz (Game) </h1>
 
 <p align="center">
-  <img src="<img width="1018" height="659" alt="image" src="https://github.com/user-attachments/assets/a6d1bc9e-8957-4c0b-9273-dd3d88e89e73" />
-"/>
+  "<img width="1015" height="654" alt="Screenshot_13" src="https://github.com/user-attachments/assets/426c4d23-3e22-4ee7-a8d2-4d81bae04514"/>
 </p>
 
 ## 💻 Projeto
