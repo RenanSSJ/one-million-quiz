@@ -1,3 +1,4 @@
+/* colors variables */
 :root {
   --bg-color:#000000;
 
@@ -11,10 +12,12 @@
   --correct-option-color:#01E32E;
 }
 
-Body {
+/* background */
+/* Body {
   background-color: var(--bg-color);
-}
+} */
 
+/* font color */
 h1 {
   color: var(--text-md);
 }
@@ -26,4 +29,8 @@ p {
 }
 h3 {
   color: var(--text-warning);
+}
+button {
+  color: var(--text-md);
+  background-color: var(--buttons-color);
 }

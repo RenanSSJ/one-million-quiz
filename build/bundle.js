@@ -26,7 +26,7 @@ eval("{module.exports = __webpack_require__.p + \"f2ce33d4ef2182cb00aa.ttf\";\n\
   \******************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, `:root {\r\n  --bg-color:#000000;\r\n\r\n  --text-warning: #FB0203; \r\n  --text-sm: #F9E231;\r\n  --text-md:#FFFFFF;\r\n\r\n  --buttons-color: #FB0203;\r\n  --select-correct-color: #F7C30F;\r\n  --select-wrong-color: #FB02034D;\r\n  --correct-option-color:#01E32E;\r\n}\r\n\r\nBody {\r\n  background-color: var(--bg-color);\r\n}\r\n\r\nh1 {\r\n  color: var(--text-md);\r\n}\r\nh2 {\r\n  color: var(--text-sm);\r\n}\r\np {\r\n  color: var(--text-md);\r\n}\r\nh3 {\r\n  color: var(--text-warning);\r\n}\r\n`, \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://one-million-quiz/./src/css/colors.css?./node_modules/css-loader/dist/cjs.js\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, `/* colors variables */\r\n:root {\r\n  --bg-color:#000000;\r\n\r\n  --text-warning: #FB0203; \r\n  --text-sm: #F9E231;\r\n  --text-md:#FFFFFF;\r\n\r\n  --buttons-color: #FB0203;\r\n  --select-correct-color: #F7C30F;\r\n  --select-wrong-color: #FB02034D;\r\n  --correct-option-color:#01E32E;\r\n}\r\n\r\n/* background */\r\n/* Body {\r\n  background-color: var(--bg-color);\r\n} */\r\n\r\n/* font color */\r\nh1 {\r\n  color: var(--text-md);\r\n}\r\nh2 {\r\n  color: var(--text-sm);\r\n}\r\np {\r\n  color: var(--text-md);\r\n}\r\nh3 {\r\n  color: var(--text-warning);\r\n}\r\nbutton {\r\n  color: var(--text-md);\r\n  background-color: var(--buttons-color);\r\n}\r\n`, \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://one-million-quiz/./src/css/colors.css?./node_modules/css-loader/dist/cjs.js\n}");
 
 /***/ }),
 
@@ -140,6 +140,16 @@ eval("{\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleEle
 
 /***/ }),
 
+/***/ "./src/assets/logo.png":
+/*!*****************************!*\
+  !*** ./src/assets/logo.png ***!
+  \*****************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("{module.exports = __webpack_require__.p + \"assets/logob23488bb64f8414b34c2.png\";\n\n//# sourceURL=webpack://one-million-quiz/./src/assets/logo.png?\n}");
+
+/***/ }),
+
 /***/ "./src/css/index.css":
 /*!***************************!*\
   !*** ./src/css/index.css ***!
@@ -156,7 +166,7 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpa
   \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/index.css */ \"./src/css/index.css\");\n\r\n\n\n//# sourceURL=webpack://one-million-quiz/./src/js/index.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/index.css */ \"./src/css/index.css\");\n/* harmony import */ var _assets_logo_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/logo.png */ \"./src/assets/logo.png\");\n\r\n\r\n\r\nconst logoImg = document.querySelector('#logo img');\r\nlogoImg.src = _assets_logo_png__WEBPACK_IMPORTED_MODULE_1__;\n\n//# sourceURL=webpack://one-million-quiz/./src/js/index.js?\n}");
 
 /***/ })
 

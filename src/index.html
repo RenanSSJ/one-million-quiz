@@ -6,10 +6,38 @@
   <title>One Million Quiz</title>
 </head>
 <body>
-  <h1>One Million Quiz</h1>
-  <h2>Player 1</h2>
-  <p>NAME</p>
-  <h3>*Warning</h3>
+  <Section class="start-page" id="start-page">
+    <div class="logo" id="logo">
+      <img src="/assets/logo.png" alt="One Million Quiz logo">
+    </div>
+
+    <div class="start-central-part" id="start-central-part">
+      <div class="player">
+        <label for="player1-name"><h2>Player 1</h2></label>
+        <input id="player1-name" type="text" placeholder="NAME" required>
+        <span id="warning" class="warning">*Required</span>
+      </div>
+
+      <div>
+        <img src="/assets/miniSilvio1.png" alt="">
+        <img src="/assets/miniSilvio2.png" alt="">
+        <img src="/assets/miniSilvio3.png" alt="">
+        <img src="/assets/miniSilvio4.png" alt="">
+        <img src="/assets/miniSilvio5.png" alt="">
+      </div>
+
+      <div class="start-central-part" id="start-central-part">
+      <div class="player">
+        <label for="player2-name"><h2>Player 2</h2></label>
+        <input id="player2-name" type="text" placeholder="NAME" required>
+        <span id="warning" class="warning">*Required</span>
+      </div>
+
+      <div></div>
+    </div>
+
+    <button id="start-button" class="start-button">START</button>
+  </Section> 
 </body>
-<script src="../build/bundle.js"></script>
+<script src="bundle.js"></script>
 </html>

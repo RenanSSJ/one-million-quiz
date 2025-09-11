@@ -11,6 +11,9 @@ module.exports = {
   },
   devServer: {
       port: 3000,
+      static: {
+        directory: path.join(__dirname, 'public'),
+      },
       open: true,
       liveReload: true,
       // Rewrites URLS - redirect to the correct pages 
@@ -42,17 +45,24 @@ module.exports = {
         filename: 'winner/index.html'
       })
     ],
-    module: {
-      rules: [
-        {
-          test: /\.css$/,
-          use: ["style-loader", "css-loader"]
-        },
-        {
-        test: /\.(ttf)$/i,
-        type: "asset/resource",
-      }
-      ]
-    }
 
+   module: {
+  rules: [
+    {
+      test: /\.(png|jpe?g|gif|svg)$/i,
+      type: 'asset/resource',
+      generator: {
+        filename: 'assets/[name][hash][ext]'
+      }
+    },
+    {
+      test: /\.css$/i,
+      use: ['style-loader', 'css-loader'],
+    },
+    {
+      test: /\.(ttf)$/i,
+      type: 'asset/resource',
+    }
+  ]
+}
 }
