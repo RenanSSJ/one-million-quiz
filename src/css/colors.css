@@ -1,0 +1,29 @@
+:root {
+  --bg-color:#000000;
+
+  --text-warning: #FB0203; 
+  --text-sm: #F9E231;
+  --text-md:#FFFFFF;
+
+  --buttons-color: #FB0203;
+  --select-correct-color: #F7C30F;
+  --select-wrong-color: #FB02034D;
+  --correct-option-color:#01E32E;
+}
+
+Body {
+  background-color: var(--bg-color);
+}
+
+h1 {
+  color: var(--text-md);
+}
+h2 {
+  color: var(--text-sm);
+}
+p {
+  color: var(--text-md);
+}
+h3 {
+  color: var(--text-warning);
+}
