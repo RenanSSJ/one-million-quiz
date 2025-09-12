@@ -19,8 +19,14 @@
   width: 11.25rem;
   height: 3rem;
   padding: 0.5rem;
-  margin-top: 4.375rem;
+  margin-top: 3rem;
+  cursor: pointer;
 }
+
+.start-button:hover {
+   transform: scale(1.1);
+}
+
 
 
 
