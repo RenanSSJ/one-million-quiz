@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin'); 
 
 module.exports = {
   mode: 'development', 
@@ -8,12 +9,10 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
     publicPath: '/',
+    clean: true,
   },
   devServer: {
       port: 3000,
-      static: {
-        directory: path.join(__dirname, 'public'),
-      },
       open: true,
       liveReload: true,
       // Rewrites URLS - redirect to the correct pages 
@@ -43,18 +42,17 @@ module.exports = {
       new HtmlWebpackPlugin({
         template: './src/pages/winner/index.html',
         filename: 'winner/index.html'
-      })
+      }),
+
+      new CopyWebpackPlugin({
+        patterns: [
+        { from: path.resolve(__dirname, 'src/images'), to: 'images' },
+        ],
+      }),
     ],
 
    module: {
   rules: [
-    {
-      test: /\.(png|jpe?g|gif|svg)$/i,
-      type: 'asset/resource',
-      generator: {
-        filename: 'assets/[name][hash][ext]'
-      }
-    },
     {
       test: /\.css$/i,
       use: ['style-loader', 'css-loader'],

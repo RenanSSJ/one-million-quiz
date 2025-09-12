@@ -140,16 +140,6 @@ eval("{\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleEle
 
 /***/ }),
 
-/***/ "./src/assets/logo.png":
-/*!*****************************!*\
-  !*** ./src/assets/logo.png ***!
-  \*****************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("{module.exports = __webpack_require__.p + \"assets/logob23488bb64f8414b34c2.png\";\n\n//# sourceURL=webpack://one-million-quiz/./src/assets/logo.png?\n}");
-
-/***/ }),
-
 /***/ "./src/css/index.css":
 /*!***************************!*\
   !*** ./src/css/index.css ***!
@@ -166,7 +156,7 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpa
   \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/index.css */ \"./src/css/index.css\");\n/* harmony import */ var _assets_logo_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/logo.png */ \"./src/assets/logo.png\");\n\r\n\r\n\r\nconst logoImg = document.querySelector('#logo img');\r\nlogoImg.src = _assets_logo_png__WEBPACK_IMPORTED_MODULE_1__;\n\n//# sourceURL=webpack://one-million-quiz/./src/js/index.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/index.css */ \"./src/css/index.css\");\n\r\n\n\n//# sourceURL=webpack://one-million-quiz/./src/js/index.js?\n}");
 
 /***/ })
 
