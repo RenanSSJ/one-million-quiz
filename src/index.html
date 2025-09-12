@@ -7,37 +7,39 @@
 </head>
 <body>
   <Section class="start-page" id="start-page">
-    <div class="logo" id="logo">
+    <div class="big-logo" id="big-logo">
       <img src="images/logo.png" alt="One Million Quiz logo">
     </div>
 
     <div class="start-central-part" id="start-central-part">
-      <div class="player">
+      <div class="player container">
         <label for="player1-name"><h2>Player 1</h2></label>
-        <input id="player1-name" type="text" placeholder="NAME" required>
+        <input id="player1-name" type="text" placeholder="NAME" required autocomplete="off">
         <span id="warning" class="warning">*Required</span>
       </div>
 
-      <div>
-        <img src="images/miniSilvio1.png" alt="">
-        <img src="images/miniSilvio2.png" alt="">
-        <img src="images/miniSilvio3.png" alt="">
-        <img src="images/miniSilvio4.png" alt="">
-        <img src="images/miniSilvio5.png" alt="">
-            
+      <div class="animation-wrapper">
+        <div class="animation">
+          <img src="images/miniSilvio1.png" alt="">
+          <img src="images/miniSilvio2.png" alt="">
+          <img src="images/miniSilvio3.png" alt="">
+          <img src="images/miniSilvio4.png" alt="">
+          <img src="images/miniSilvio5.png" alt="">  
+        </div>
       </div>
 
-      <div class="start-central-part" id="start-central-part">
-      <div class="player">
+      <div class="player container">
         <label for="player2-name"><h2>Player 2</h2></label>
-        <input id="player2-name" type="text" placeholder="NAME" required>
+        <input id="player2-name" type="text" placeholder="NAME" required autocomplete="off">
         <span id="warning" class="warning">*Required</span>
       </div>
 
-      <div></div>
     </div>
-
-    <button id="start-button" class="start-button">START</button>
+    <div id="start-button-container" class="start-button-container">
+      <button id="start-button" class="start-button">START</button>
+    </div>
+    
+    </div>
   </Section> 
 </body>
 <script src="bundle.js"></script>

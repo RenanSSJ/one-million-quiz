@@ -1,0 +1,25 @@
+.big-logo{
+  display: flex;
+  justify-content: center;
+}
+.big-logo img {
+  width: 19.75rem;
+  height: 9.8125rem;
+}
+.start-central-part {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.start-button-container {
+  display: flex;
+  justify-content: center;
+}
+.start-button {
+  width: 11.25rem;
+  height: 3rem;
+  padding: 0.5rem;
+}
+
+
+
