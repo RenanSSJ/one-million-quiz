@@ -16,5 +16,6 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Java Script
 - Git e Github
 - Figma
+- Trello (Tasks Management)
 
 
