@@ -8,3 +8,33 @@
 body {
   font-family: "Pusab", sans-serif;
 }
+
+/* font colors and size */
+h1 {
+  color: var(--text-md);
+}
+h2 {
+  color: var(--text-md);
+  font-size: 0.75rem;
+}
+.player h2 {
+  color: var(--text-sm);
+  font-size: 0.75rem;
+}
+
+p {
+  color: var(--text-md);
+  font-size: 1.125rem;
+}
+h3 {
+  color: var(--text-warning);
+}
+
+button {
+  color: var(--text-md);
+  background-color: var(--buttons-color);
+}
+
+.counter {
+  font-size: 1.25rem;
+}

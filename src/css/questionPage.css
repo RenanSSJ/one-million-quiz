@@ -1,0 +1,117 @@
+/* Left side */
+
+.quiz-container {
+  display: flex;
+  height: 832px; 
+  width: 1280px;
+  padding: 25px;
+}
+.question-text h2 {
+  font-size: 1.125rem; 
+  font-weight: 400;
+}
+
+.question-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  align-items: center;
+}
+
+/* logo */
+.question-logo-container {
+  display: flex;              
+  justify-content: center;    
+  align-items: center;        
+  margin-bottom: 40px; 
+  margin-top: -10px;     
+}
+.quiz-logo {
+  width: 12.75rem;
+  height: 6.3125rem;
+  justify-content: center;
+}
+
+/* question */
+.question-text {
+  width: 462px;
+  font-size: 18px;
+  margin-block: 35px;
+  text-align: left;
+}
+
+/* options */
+
+button.option {
+  display: flex;
+  width: 450px;
+  height: 56px;
+  padding: 20px;
+  text-align: left;
+  align-items: center;
+  cursor: pointer;
+}
+
+button.option:hover {
+  background: #a72424
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Right side */
+
+
+aside.silvio-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.silvio-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.speech-bubble {
+  position: relative;
+  z-index: 1;
+}
+
+.speech-bubble img {
+  display: block;
+  position: absolute;
+  width: 19.875rem; 
+  top: -15rem;
+  left: 25%;
+}
+
+.speech-bubble p {
+  color: var(--text-bubble);
+  position: relative;
+  top: -14.125rem; 
+  left: 6.2rem;
+  white-space: nowrap;
+}
+
+.silvio-img {
+  position: relative;
+  display: inline-block;
+  width: 28.5rem; 
+  height: 33.75rem; 
+  border: 2px solid white;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.counter {
+  color: var(--text-md);
+}
+
+
+

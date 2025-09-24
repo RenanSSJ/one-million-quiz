@@ -11,6 +11,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .start-button-container {
   display: flex;
   justify-content: center;
@@ -25,6 +26,36 @@
 
 .start-button:hover {
    transform: scale(1.1);
+}
+
+.warning {
+  display: flex;
+  margin-top: 0.625rem;
+  color: var(--text-warning);
+  font-size: 0.5625rem;
+}
+
+/* input setup */
+input {
+  color: var(--text-md);
+  width: 12rem;   
+  height: 2.5rem; 
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid var(--text-md);
+  text-align: center;
+  outline: none;
+}
+input::placeholder {
+  font-size: 1rem;
+  color: var(--text-md);
+  opacity: 1;
+}
+input:focus::placeholder {
+  color: transparent; 
 }
 
 
