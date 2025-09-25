@@ -1,0 +1,35 @@
+.feedback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 832px;
+  width: 1280px;
+}
+
+.feedback-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedback img {
+  width: 196px;
+  height: 358px;
+  object-fit: cover;
+  margin-block: 60px;
+}
+
+.feedback-text {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  gap: 33px;
+}
+
+.feedback h2, span {
+  color: var(--text-md);
+  font-size: 1.125rem;
+}
+
+

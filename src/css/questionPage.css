@@ -54,7 +54,8 @@ button.option {
 }
 
 button.option:hover {
-  background: #a72424
+  background: #a72424;
+  border: 1px solid white;
 }
 
 .options {
