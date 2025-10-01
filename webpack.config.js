@@ -60,7 +60,17 @@ module.exports = {
     {
       test: /\.(ttf)$/i,
       type: 'asset/resource',
-    }
+    },
+    {
+        test: /\.js$/,          // apply this rule to all .js files
+        exclude: /node_modules/, // don't include node_modules
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      },
   ]
 }
 }

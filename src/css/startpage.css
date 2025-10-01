@@ -35,6 +35,10 @@
   font-size: 0.5625rem;
 }
 
+#warning-player1, #warning-player2 {
+  display: none;
+}
+
 /* input setup */
 input {
   color: var(--text-md);
