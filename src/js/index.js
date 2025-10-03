@@ -29,4 +29,14 @@ startButton.addEventListener("click", () => {
     warning2.style.display = "none"
   }
 
+  if (valid) {
+    player1 = player1Input.value.trim();
+    player2 = player2Input.value.trim();
+
+    localStorage.setItem("player1", player1)
+    localStorage.setItem("player2", player2)
+    
+    console.log("player1: " + player1)
+    console.log("player2: " + player2)
+  }
 })
