@@ -171,7 +171,8 @@ function handleAnswer(selectedIndex, player) {
     setTimeout(() => {
         nextQuestion();
     }, 4500); 
- 
+
+    
 }
 // FEEDBACK
 function showTempFeedback(isCorrect, player) {
@@ -199,6 +200,8 @@ function showTempFeedback(isCorrect, player) {
                 if (h2) h2.innerHTML = `<span class="player-name">${playerName}</span> ANSWERED INCORRECTLY...`;
                 
                 if (feedbackNegativePlayerName) feedbackNegativePlayerName.textContent = playerName;
+            }
+
             if (feedbackPositiveEl) feedbackPositiveEl.style.display = "none";
             if (feedbackNegativeEl) feedbackNegativeEl.style.display = "flex";
         }
