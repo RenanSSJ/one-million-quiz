@@ -192,7 +192,7 @@ function showTempFeedback(isCorrect, player) {
         } else {
             if (player === null && feedbackNegativeEl) {
                 const h2 = feedbackNegativeEl.querySelector("h2");
-                if (h2) h2.textContent = "O TEMPO ACABOU!";
+                if (h2) h2.textContent = "TIME IS OVER!";
             } 
             
             else if (feedbackNegativeEl) {

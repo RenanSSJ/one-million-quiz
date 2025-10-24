@@ -32,10 +32,10 @@ if (winnerNameEl && winnerName) {
     winnerNameEl.textContent = winnerName.toUpperCase();
 }
 if (player1ScoreEl) {
-    player1ScoreEl.textContent = `${player1Name}: ${scores.mouse} pontos`;
+    player1ScoreEl.textContent = `${player1Name}: ${scores.mouse} points`;
 }
 if (player2ScoreEl) {
-    player2ScoreEl.textContent = `${player2Name}: ${scores.keyboard} pontos`;
+    player2ScoreEl.textContent = `${player2Name}: ${scores.keyboard} points`;
 }
 
 // confetti animation
