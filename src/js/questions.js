@@ -47,7 +47,7 @@ function setURLForQuestionByIndex(index) {
     history.replaceState({}, "", `${window.location.pathname}?id=${id}`);
 }
 
-// LOAD JSON
+// Load Json + create function to load the question
 async function loadQuestions() {
     try {
         const res = await fetch(QUESTIONS_URL);

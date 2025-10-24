@@ -10,7 +10,6 @@ let player1 = "";
 let player2 = "";
 
 function validateInput(input, warning) {
-  // CORREÇÃO: Adiciona verificação se os elementos existem
   if (!input || !warning) return false; 
 
   const value = input.value.trim();
@@ -24,7 +23,6 @@ function validateInput(input, warning) {
   }
 }
 
-// CORREÇÃO: Verifica se o botão existe antes de adicionar o listener
 if (startButton) {
   startButton.addEventListener("click", () => {
     let valid = true;
@@ -39,13 +37,10 @@ if (startButton) {
       localStorage.setItem("player1", player1);
       localStorage.setItem("player2", player2);
 
-      // redireciona para a primeira questão (id=1)
       window.location.href = "./question/index.html?id=0";
     }
   });
 }
-
-// CORREÇÃO: Verifica se os inputs existem antes de adicionar os listeners
 if (player1Input) {
   player1Input.addEventListener("blur", () => validateInput(player1Input, warning1));
 }
