@@ -167,12 +167,11 @@ function handleAnswer(selectedIndex, player) {
         showTempFeedback(isCorrect, player);
     }, 1000); 
 
-    // speech buble + feedback page time
+    // speech buble + feedback page time (will extend the feedback full page)
     setTimeout(() => {
         nextQuestion();
-    }, 2500); 
-
-    
+    }, 4500); 
+ 
 }
 // FEEDBACK
 function showTempFeedback(isCorrect, player) {
@@ -194,15 +193,12 @@ function showTempFeedback(isCorrect, player) {
                 const h2 = feedbackNegativeEl.querySelector("h2");
                 if (h2) h2.textContent = "TIME IS OVER!";
             } 
-            
             else if (feedbackNegativeEl) {
                 
                 const h2 = feedbackNegativeEl.querySelector("h2");
                 if (h2) h2.innerHTML = `<span class="player-name">${playerName}</span> ANSWERED INCORRECTLY...`;
                 
                 if (feedbackNegativePlayerName) feedbackNegativePlayerName.textContent = playerName;
-            }
-
             if (feedbackPositiveEl) feedbackPositiveEl.style.display = "none";
             if (feedbackNegativeEl) feedbackNegativeEl.style.display = "flex";
         }
@@ -210,12 +206,17 @@ function showTempFeedback(isCorrect, player) {
     }
 }
 
-// NEXT 
+// Next question
 function nextQuestion() {
     clearInterval(timer);
     currentQuestionNumber++;
-    if (currentQuestionNumber >= questions.length) endGame();
-    else showQuestion();
+
+    //add delay at the end so the feedback is complete before the winners page shows up
+    if (currentQuestionNumber >= questions.length) {
+        setTimeout(() => endGame(), 2000); 
+    } else {
+        showQuestion();
+    }
 }
 
 function endGame() {
