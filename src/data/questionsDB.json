@@ -1,0 +1,35 @@
+[
+  {
+    "id": 0,
+    "question": "What's the largest planet in the solar system?",
+    "answers": [
+      { "id": 0, "text": "Earth" },
+      { "id": 1, "text": "Jupiter" },
+      { "id": 2, "text": "Mars" },
+      { "id": 3, "text": "Saturn" }
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 1,
+    "question": "What is the chemical symbol for water?",
+    "answers": [
+      { "id": 0, "text": "O2" },
+      { "id": 1, "text": "H2O" },
+      { "id": 2, "text": "CO2" },
+      { "id": 3, "text": "NaCl" }
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 2,
+    "question": "Who painted the Mona Lisa?",
+    "answers": [
+      { "id": 0, "text": "Vincent van Gogh" },
+      { "id": 1, "text": "Pablo Picasso" },
+      { "id": 2, "text": "Leonardo da Vinci" },
+      { "id": 3, "text": "Michelangelo" }
+    ],
+    "correctAnswer": 2
+  }
+]

@@ -4,47 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Questions</title>
-  <link rel="stylesheet" href="src/css/index.css">
 </head>
 <body>
   <main class="quiz-container">
-    <!-- Left side -->
+    <!-- Left side Section-->
     <section class="question-section">
       <header>
         <div class="question-logo-container">
-          <img src="../../images/logo.png" alt="One Million Quiz Logo" class="quiz-logo">
+          <img src="/images/logo.png" alt="One Million Quiz Logo" class="quiz-logo">
         </div>
         <div class="question-text">
-          <h1>
+          <h1 id="question-text">
             What is the largest planet in the solar system?
           </h1>
         </div>
       </header>
      
-      <div class="options">
+      <div class="options" id="options-container">
+        
         <button class="option">A) Earth</button>
         <button class="option">B) Jupiter</button>
         <button class="option">C) Mars</button>
-        <button class="option">D) Saturn</button>
+        <button class="option">D) Saturn</button> 
+       
       </div>
     </section>
 
-    <!-- Right side -->
+    <!-- Right side Section -->
     <aside class="silvio-section">
       <div class="speech-bubble" id="speechBubble">
-        <img src="../../images/speechBubble.png" alt="speech bubble">
+        <img src="/images/speechBubble.png" alt="speech bubble">
         <p>PETER GOT IT!</p>
       </div>
       <div class="silvio-container">
-        <img src="../../images/normalSilvio.png" alt="Silvio Santos" class="silvio-img">
-        <span class="counter">10 Seconds</span>
+        <img src="/images/normalSilvio.png" alt="Silvio Santos" class="silvio-img">
+        <span id="counter" class="counter">10 Seconds</span>
       </div>
     </aside>
   </main>
   <!-- feedback section (positive) -->
   <div class="feedback" id="feedback-positive">
     <div class="feedback-container">
-      <img src="../../images/mini_silvio_happy.png" alt="happy mini Silvio Santos">
+      <img src="/images/mini_silvio_happy.png" alt="happy mini Silvio Santos">
       <div class="feedback-text">
         <h2><span class="player-name">Peter</span> ANSWERED CORRECTLY!</h2>
         <p>GET READY <br>FOR THE NEXT ONE...</p>
@@ -52,13 +53,12 @@
     </div>
     <!-- feedback section (negative) -->
     <div class="feedback-container">
-      <img src="../../images/mini_silvio_sad.png" alt="happy mini Silvio Santos">
+      <img src="/images/mini_silvio_sad.png" alt="happy mini Silvio Santos">
      <div class="feedback-text">
         <h2><span class="player-name">Peter</span> ANSWERED INCORRECTLY...</h2>
         <p>GET READY <br>FOR THE NEXT ONE...</p>
      </div>
     </div>
   </div>
-
 </body>
 </html>

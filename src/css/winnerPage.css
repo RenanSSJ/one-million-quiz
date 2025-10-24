@@ -1,21 +1,22 @@
 .winner-main {
-  width: 80rem;
-  height: 52rem;
+    width: 80rem;
+    height: 52rem;
 }
 
 .winner-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
 
-  h1, span {
+.winner-container h1,
+.winner-container span {
     font-size: 1.5rem;
     color: #FBE233;
 }
-}
 
 img.silvio-winner {
-  max-width: 50.0625rem;
+    max-width: 50.0625rem;
 }
