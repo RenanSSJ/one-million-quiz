@@ -149,7 +149,6 @@ function handleAnswer(selectedIndex, player) {
   clearInterval(timer);
   const q = questions[currentQuestionNumber];
 
-  // Isso ainda pega todos os botões, está correto
   const buttons = optionsContainer.querySelectorAll(".option");
   buttons.forEach(btn => {
     btn.disabled = true;
@@ -165,38 +164,32 @@ function handleAnswer(selectedIndex, player) {
   const selectedButton = buttons[selectedIndex]; 
 
   if (isCorrect) {
-    // Cenário: Resposta CORRETA
     if (selectedButton) {
       selectedButton.style.backgroundColor = "var(--correct-option-color)"; 
       
-      // Encontra o span de pontuação ao lado do botão
       const wrapper = selectedButton.parentElement;
       const scoreSpan = wrapper.querySelector(".option-score");
       if (scoreSpan) {
         scoreSpan.textContent = "+1";
-        scoreSpan.style.color = "var(--correct-option-color)"; // Cor verde
       }
     }
   } else {
-    // Cenário: Resposta INCORRETA
+    
     if (selectedButton) {
       selectedButton.style.backgroundColor = "var(--select-wrong-color)"; 
       
-      // Encontra o span de pontuação ao lado do botão
       const wrapper = selectedButton.parentElement;
       const scoreSpan = wrapper.querySelector(".option-score");
       if (scoreSpan) {
         scoreSpan.textContent = "-1";
-        scoreSpan.style.color = "var(--select-wrong-color)"; // Cor vermelha
       }
     }
-    // Pinta a resposta correta de amarelo
+
     if (buttons[currentNumber]) {
       buttons[currentNumber].style.backgroundColor = "var(--select-correct-color)"; 
     }
   }
   
-  // O resto da função continua exatamente igual
   if (isCorrect) {
     if (player === "mouse") scores.mouse += 1;
     else if (player === "keyboard") scores.keyboard += 1;
