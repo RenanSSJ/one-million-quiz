@@ -14,13 +14,14 @@ const player1Name = localStorage.getItem("player1") || "Jogador 1";
 const player2Name = localStorage.getItem("player2") || "Jogador 2";
 
 // Elements
-const questionText = document.getElementById("question-text");
-const optionsContainer = document.getElementById("options-container");
 const counterEl = document.querySelector(".counter");
-const quizContainer = document.querySelector(".quiz-container"); 
+const imgSilvio = document.getElementById("normalSilvio");
 const speechBubble = document.getElementById("speechBubble");
-const speechBubbleText = speechBubble ? speechBubble.querySelector("p") : null;
+const questionText = document.getElementById("question-text");
+const quizContainer = document.querySelector(".quiz-container"); 
+const optionsContainer = document.getElementById("options-container");
 const feedbackContainer = document.getElementById("feedback-positive");
+const speechBubbleText = speechBubble ? speechBubble.querySelector("p") : null;
 const feedbackElements = feedbackContainer ? feedbackContainer.querySelectorAll(".feedback-container") : [];
 const feedbackPositiveEl = feedbackElements.length > 0 ? feedbackElements[0] : null;
 const feedbackNegativeEl = feedbackElements.length > 1 ? feedbackElements[1] : null;
@@ -133,34 +134,59 @@ function updateCounterDisplay() {
 
 // ANSWER HANDLING
 function handleAnswer(selectedIndex, player) {
-    clearInterval(timer);
-    const q = questions[currentQuestionNumber];
+  clearInterval(timer);
+  const q = questions[currentQuestionNumber];
 
-    const currentNumber = (typeof q.correctAnswer === "number") ? q.correctAnswer
-        : (typeof q.currentNumber === "number") ? q.currentNumber
-        : (typeof q.correct === "number") ? q.correct
-        : 0;
+  const buttons = optionsContainer.querySelectorAll(".option");
+  buttons.forEach(btn => {
+    btn.disabled = true;
+    btn.style.cursor = "default";
+  });
 
-    const isCorrect = (selectedIndex === currentNumber);
+  const currentNumber =
+    typeof q.correctAnswer === "number" ? q.correctAnswer :
+    typeof q.currentNumber === "number" ? q.currentNumber :
+    typeof q.correct === "number" ? q.correct :
+    0;
 
-    if (isCorrect) {
-        if (player === "mouse") scores.mouse += 1;
-        else if (player === "keyboard") scores.keyboard += 1;
-    } else {
-        if (player === "mouse") scores.mouse -= 1;
-        else if (player === "keyboard") scores.keyboard -= 1;
+  const isCorrect = selectedIndex === currentNumber;
+
+  if (isCorrect) {
+    if (buttons[selectedIndex]) {
+      buttons[selectedIndex].style.backgroundColor = "#01E32E";
     }
-
-    let playerName = (player === "mouse") ? player1Name : player2Name;
-    
-    if (speechBubble) {
-        let speechText = isCorrect 
-            ? `${playerName.toUpperCase()} GOT IT!` 
-            : `INCORRECT!`;
-            
-        if (speechBubbleText) speechBubbleText.textContent = speechText;
-        speechBubble.style.display = "block";
+  } else {
+    if (buttons[selectedIndex]) {
+      buttons[selectedIndex].style.backgroundColor = "#FB02034D";
     }
+    if (buttons[currentNumber]) {
+      buttons[currentNumber].style.backgroundColor = "#F7C30F";
+    }
+  }
+
+  if (isCorrect) {
+    if (player === "mouse") scores.mouse += 1;
+    else if (player === "keyboard") scores.keyboard += 1;
+  } else {
+    if (player === "mouse") scores.mouse -= 1;
+    else if (player === "keyboard") scores.keyboard -= 1;
+  }
+
+  const playerName = player === "mouse" ? player1Name : player2Name;
+
+  if (speechBubble) {
+    const speechText = isCorrect
+      ? `${playerName.toUpperCase()} GOT IT!`
+      : `INCORRECT!`;
+
+    if (speechBubbleText) {
+      speechBubbleText.textContent = speechText;
+    }
+    speechBubble.style.display = "block";
+    imgSilvio.src = isCorrect
+      ? "/images/happySilvio.png"
+      : "/images/sadSilvio.png";
+  }
 
     //adjust time for feedback
     setTimeout(() => {
@@ -171,8 +197,7 @@ function handleAnswer(selectedIndex, player) {
     setTimeout(() => {
         nextQuestion();
     }, 4500); 
-
-    
+ 
 }
 // FEEDBACK
 function showTempFeedback(isCorrect, player) {

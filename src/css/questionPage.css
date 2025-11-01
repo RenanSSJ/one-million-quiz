@@ -45,11 +45,12 @@
 
 button.option {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 450px;
   height: 56px;
   padding: 20px;
   text-align: left;
-  align-items: center;
   cursor: pointer;
 }
 
