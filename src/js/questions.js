@@ -209,7 +209,7 @@ function handleAnswer(selectedIndex, player) {
   
   if (speechBubble) {
     let speechText = isCorrect 
-    ? `${playerName.toUpperCase()} GOT IT!`
+    ? `CORRECT!`
    : `INCORRECT!`;
 
     if (speechBubbleText) {
@@ -223,15 +223,15 @@ function handleAnswer(selectedIndex, player) {
     }
   }
 
-  //adjust time for feedback
+  //adjust time for feedback (normal Silvio part)
   setTimeout(() => {
     showTempFeedback(isCorrect, player);
- }, 1000); 
+ }, 2000); 
 
-  // speech buble + feedback page time (will extend the feedback full page)
+  // speech buble + feedback page time (will extend the miniSilvio feedback page)
   setTimeout(() => {
     nextQuestion();
-  }, 4500); 
+  }, 5500); 
 }
 // FEEDBACK
 function showTempFeedback(isCorrect, player) {
