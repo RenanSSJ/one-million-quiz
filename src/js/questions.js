@@ -68,53 +68,52 @@ async function loadQuestions() {
 
 // SHOW QUESTION
 function showQuestion() {
-    if (feedbackContainer) feedbackContainer.style.display = "none";
-    if (speechBubble) speechBubble.style.display = "none";
-    if (quizContainer) quizContainer.style.display = "flex";
+  if (feedbackContainer) feedbackContainer.style.display = "none";
+  if (speechBubble) speechBubble.style.display = "none";
+  if (quizContainer) quizContainer.style.display = "flex";
+  if (imgSilvio) imgSilvio.src = "/images/normalSilvio.png";
 
-    clearInterval(timer);
-    timeLeft = 10;
-    updateCounterDisplay();
+  clearInterval(timer);
+  timeLeft = 10;
+  updateCounterDisplay();
 
-    const q = questions[currentQuestionNumber];
-    if (!q) {
-        endGame();
-        return;
-    }
+  const q = questions[currentQuestionNumber];
+  if (!q) {
+    endGame();
+    return;
+  }
 
-    setURLForQuestionByIndex(currentQuestionNumber);
-    questionText.textContent = q.question ?? q.text ?? "Pergunta sem texto";
+  setURLForQuestionByIndex(currentQuestionNumber);
+  questionText.textContent = q.question ?? q.text ?? "Pergunta sem texto";
 
-    optionsContainer.innerHTML = "";
+  optionsContainer.innerHTML = "";
   const answers = q.answers ?? q.options ?? [];
   answers.forEach((ans, i) => {
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "option-wrapper";
+
     const btn = document.createElement("button");
     btn.className = "option";
     const text = typeof ans === "string" ? ans : (ans.text ?? String(ans));
-
-    // Cria o span para o texto da opção
-    const textSpan = document.createElement("span");
-    textSpan.className = "option-text"; // (classe opcional para estilizar)
-    textSpan.textContent = `${String.fromCharCode(65 + i)}) ${text}`;
-
-    // Cria o span para a pontuação
-    const scoreSpan = document.createElement("span");
-    scoreSpan.className = "option-score";
-    // Começa vazio
-    
-    btn.appendChild(textSpan);
-    btn.appendChild(scoreSpan);
-
+    btn.textContent = `${String.fromCharCode(65 + i)}) ${text}`; 
     btn.dataset.index = i;
     btn.addEventListener("click", () => {
       if (currentPlayer === "mouse") handleAnswer(i, "mouse");
     });
-    optionsContainer.appendChild(btn);
+
+    const scoreSpan = document.createElement("span");
+    scoreSpan.className = "option-score";
+
+    wrapper.appendChild(btn);
+    wrapper.appendChild(scoreSpan);
+
+    optionsContainer.appendChild(wrapper);
   });
 
-    currentPlayer = null;
-    toggleButtons();
-    startTimer();
+  currentPlayer = null;
+  toggleButtons();
+  startTimer();
 }
 
 // TIMER
@@ -150,6 +149,7 @@ function handleAnswer(selectedIndex, player) {
   clearInterval(timer);
   const q = questions[currentQuestionNumber];
 
+  // Isso ainda pega todos os botões, está correto
   const buttons = optionsContainer.querySelectorAll(".option");
   buttons.forEach(btn => {
     btn.disabled = true;
@@ -165,22 +165,38 @@ function handleAnswer(selectedIndex, player) {
   const selectedButton = buttons[selectedIndex]; 
 
   if (isCorrect) {
+    // Cenário: Resposta CORRETA
     if (selectedButton) {
       selectedButton.style.backgroundColor = "var(--correct-option-color)"; 
-      const scoreSpan = selectedButton.querySelector(".option-score"); 
-      if (scoreSpan) scoreSpan.textContent = "+1"; 
+      
+      // Encontra o span de pontuação ao lado do botão
+      const wrapper = selectedButton.parentElement;
+      const scoreSpan = wrapper.querySelector(".option-score");
+      if (scoreSpan) {
+        scoreSpan.textContent = "+1";
+        scoreSpan.style.color = "var(--correct-option-color)"; // Cor verde
+      }
     }
   } else {
+    // Cenário: Resposta INCORRETA
     if (selectedButton) {
       selectedButton.style.backgroundColor = "var(--select-wrong-color)"; 
-      const scoreSpan = selectedButton.querySelector(".option-score"); 
-      if (scoreSpan) scoreSpan.textContent = "-1"; 
+      
+      // Encontra o span de pontuação ao lado do botão
+      const wrapper = selectedButton.parentElement;
+      const scoreSpan = wrapper.querySelector(".option-score");
+      if (scoreSpan) {
+        scoreSpan.textContent = "-1";
+        scoreSpan.style.color = "var(--select-wrong-color)"; // Cor vermelha
+      }
     }
+    // Pinta a resposta correta de amarelo
     if (buttons[currentNumber]) {
       buttons[currentNumber].style.backgroundColor = "var(--select-correct-color)"; 
     }
   }
-
+  
+  // O resto da função continua exatamente igual
   if (isCorrect) {
     if (player === "mouse") scores.mouse += 1;
     else if (player === "keyboard") scores.keyboard += 1;
@@ -194,7 +210,7 @@ function handleAnswer(selectedIndex, player) {
   if (speechBubble) {
     let speechText = isCorrect 
     ? `${playerName.toUpperCase()} GOT IT!`
-    : `INCORRECT!`;
+   : `INCORRECT!`;
 
     if (speechBubbleText) {
       speechBubbleText.textContent = speechText;
@@ -204,13 +220,13 @@ function handleAnswer(selectedIndex, player) {
       imgSilvio.src = "/images/happySilvio.png";
     } else {
       imgSilvio.src = "/images/sadSilvio.png"; 
-      }
+    }
   }
 
   //adjust time for feedback
   setTimeout(() => {
     showTempFeedback(isCorrect, player);
-  }, 1000); 
+ }, 1000); 
 
   // speech buble + feedback page time (will extend the feedback full page)
   setTimeout(() => {

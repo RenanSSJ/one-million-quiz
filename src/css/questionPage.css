@@ -42,6 +42,17 @@
 }
 
 /* options */
+.option-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px; 
+}
+
+.option-score {
+  font-size: 1.5rem; 
+  font-weight: bold;
+  width: 40px;
+}
 
 button.option {
   display: flex;
@@ -65,11 +76,6 @@ button.option:hover {
   gap: 22px;
 }
 
-.option-score {
- font-weight: bold;
- font-size: 1.2rem; 
- margin-left: 20px; 
-}
 
 /* Right side */
 
