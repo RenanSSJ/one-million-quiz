@@ -86,18 +86,31 @@ function showQuestion() {
     questionText.textContent = q.question ?? q.text ?? "Pergunta sem texto";
 
     optionsContainer.innerHTML = "";
-    const answers = q.answers ?? q.options ?? [];
-    answers.forEach((ans, i) => {
-        const btn = document.createElement("button");
-        btn.className = "option";
-        const text = typeof ans === "string" ? ans : (ans.text ?? String(ans));
-        btn.textContent = `${String.fromCharCode(65 + i)}) ${text}`;
-        btn.dataset.index = i;
-        btn.addEventListener("click", () => {
-            if (currentPlayer === "mouse") handleAnswer(i, "mouse");
-        });
-        optionsContainer.appendChild(btn);
+  const answers = q.answers ?? q.options ?? [];
+  answers.forEach((ans, i) => {
+    const btn = document.createElement("button");
+    btn.className = "option";
+    const text = typeof ans === "string" ? ans : (ans.text ?? String(ans));
+
+    // Cria o span para o texto da opção
+    const textSpan = document.createElement("span");
+    textSpan.className = "option-text"; // (classe opcional para estilizar)
+    textSpan.textContent = `${String.fromCharCode(65 + i)}) ${text}`;
+
+    // Cria o span para a pontuação
+    const scoreSpan = document.createElement("span");
+    scoreSpan.className = "option-score";
+    // Começa vazio
+    
+    btn.appendChild(textSpan);
+    btn.appendChild(scoreSpan);
+
+    btn.dataset.index = i;
+    btn.addEventListener("click", () => {
+      if (currentPlayer === "mouse") handleAnswer(i, "mouse");
     });
+    optionsContainer.appendChild(btn);
+  });
 
     currentPlayer = null;
     toggleButtons();
@@ -143,24 +156,28 @@ function handleAnswer(selectedIndex, player) {
     btn.style.cursor = "default";
   });
 
-  const currentNumber =
-    typeof q.correctAnswer === "number" ? q.correctAnswer :
-    typeof q.currentNumber === "number" ? q.currentNumber :
-    typeof q.correct === "number" ? q.correct :
-    0;
+  const currentNumber = (typeof q.correctAnswer === "number") ? q.correctAnswer
+    : (typeof q.currentNumber === "number") ? q.currentNumber
+    : (typeof q.correct === "number") ? q.correct
+    : 0;
 
-  const isCorrect = selectedIndex === currentNumber;
+  const isCorrect = (selectedIndex === currentNumber);
+  const selectedButton = buttons[selectedIndex]; 
 
   if (isCorrect) {
-    if (buttons[selectedIndex]) {
-      buttons[selectedIndex].style.backgroundColor = "#01E32E";
+    if (selectedButton) {
+      selectedButton.style.backgroundColor = "var(--correct-option-color)"; 
+      const scoreSpan = selectedButton.querySelector(".option-score"); 
+      if (scoreSpan) scoreSpan.textContent = "+1"; 
     }
   } else {
-    if (buttons[selectedIndex]) {
-      buttons[selectedIndex].style.backgroundColor = "#FB02034D";
+    if (selectedButton) {
+      selectedButton.style.backgroundColor = "var(--select-wrong-color)"; 
+      const scoreSpan = selectedButton.querySelector(".option-score"); 
+      if (scoreSpan) scoreSpan.textContent = "-1"; 
     }
     if (buttons[currentNumber]) {
-      buttons[currentNumber].style.backgroundColor = "#F7C30F";
+      buttons[currentNumber].style.backgroundColor = "var(--select-correct-color)"; 
     }
   }
 
@@ -172,32 +189,33 @@ function handleAnswer(selectedIndex, player) {
     else if (player === "keyboard") scores.keyboard -= 1;
   }
 
-  const playerName = player === "mouse" ? player1Name : player2Name;
-
+  let playerName = (player === "mouse") ? player1Name : player2Name;
+  
   if (speechBubble) {
-    const speechText = isCorrect
-      ? `${playerName.toUpperCase()} GOT IT!`
-      : `INCORRECT!`;
+    let speechText = isCorrect 
+    ? `${playerName.toUpperCase()} GOT IT!`
+    : `INCORRECT!`;
 
     if (speechBubbleText) {
       speechBubbleText.textContent = speechText;
     }
     speechBubble.style.display = "block";
-    imgSilvio.src = isCorrect
-      ? "/images/happySilvio.png"
-      : "/images/sadSilvio.png";
+    if (isCorrect) {
+      imgSilvio.src = "/images/happySilvio.png";
+    } else {
+      imgSilvio.src = "/images/sadSilvio.png"; 
+      }
   }
 
-    //adjust time for feedback
-    setTimeout(() => {
-        showTempFeedback(isCorrect, player);
-    }, 1000); 
+  //adjust time for feedback
+  setTimeout(() => {
+    showTempFeedback(isCorrect, player);
+  }, 1000); 
 
-    // speech buble + feedback page time (will extend the feedback full page)
-    setTimeout(() => {
-        nextQuestion();
-    }, 4500); 
- 
+  // speech buble + feedback page time (will extend the feedback full page)
+  setTimeout(() => {
+    nextQuestion();
+  }, 4500); 
 }
 // FEEDBACK
 function showTempFeedback(isCorrect, player) {

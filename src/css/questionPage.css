@@ -65,6 +65,12 @@ button.option:hover {
   gap: 22px;
 }
 
+.option-score {
+ font-weight: bold;
+ font-size: 1.2rem; 
+ margin-left: 20px; 
+}
+
 /* Right side */
 
 
