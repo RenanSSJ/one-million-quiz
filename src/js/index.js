@@ -9,19 +9,43 @@ const warning2 = document.getElementById("warning-player2");
 let player1 = "";
 let player2 = "";
 
+function showWarning(warning, text) {
+  if (!warning) return;
+  warning.textContent = text;
+  warning.style.display = "inline";
+}
+
+function hideWarning(warning) {
+  if (!warning) return;
+  warning.style.display = "none";
+}
+
 function validateInput(input, warning) {
-  if (!input || !warning) return false; 
+  if (!input || !warning) return false;
 
   const value = input.value.trim();
 
-  if (value.length < 3 || value.length > 8) {
-    warning.style.display = "inline";
+  if (value.length === 0) {
+    showWarning(warning, "Required");
     return false;
-  } else {
-    warning.style.display = "none";
-    return true;
   }
+
+  if (value.length < 3) {
+    showWarning(warning, "Name is too short!");
+    return false;
+  }
+
+  if (value.length > 8) {
+    showWarning(warning, "Name is too long!");
+    return false;
+  }
+
+  hideWarning(warning);
+  return true;
 }
+
+if (warning1) warning1.style.display = "none";
+if (warning2) warning2.style.display = "none";
 
 if (startButton) {
   startButton.addEventListener("click", () => {
@@ -41,10 +65,13 @@ if (startButton) {
     }
   });
 }
+
 if (player1Input) {
+  player1Input.addEventListener("input", () => validateInput(player1Input, warning1));
   player1Input.addEventListener("blur", () => validateInput(player1Input, warning1));
 }
 
 if (player2Input) {
+  player2Input.addEventListener("input", () => validateInput(player2Input, warning2));
   player2Input.addEventListener("blur", () => validateInput(player2Input, warning2));
 }
