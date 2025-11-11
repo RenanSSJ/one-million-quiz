@@ -1,32 +1,43 @@
 .animation-wrapper {
-  width: 7.4375rem;    
-  height: 18.875rem;  
-  margin: 2rem auto;   
+  width: 7.4375rem;
+  height: 18.875rem;
+  margin: 2rem auto;
   position: relative;
 }
+
 .animation {
   position: relative;
   width: 100%;
   height: 100%;
 }
+
 .animation img {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain; 
+  object-fit: contain;
+  display: block;
+
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: opacity, transform;
+
   opacity: 0;
-  animation: play 2.5s steps(5) infinite;
+  animation: frameCycle 2.5s linear infinite;
+  animation-fill-mode: both;
+  pointer-events: none;
 }
 
-.animation img:nth-child(1) { animation-delay: 0s; }
-.animation img:nth-child(2) { animation-delay: 0.5s; }
-.animation img:nth-child(3) { animation-delay: 1s; }
-.animation img:nth-child(4) { animation-delay: 1.5s; }
-.animation img:nth-child(5) { animation-delay: 2s; }
+.animation img:nth-child(1) { animation-delay: 0s;   } 
+.animation img:nth-child(2) { animation-delay: -0.5s; }
+.animation img:nth-child(3) { animation-delay: -1s;   }
+.animation img:nth-child(4) { animation-delay: -1.5s; }
+.animation img:nth-child(5) { animation-delay: -2s;   }
 
-@keyframes play {
-  0%, 19.99% { opacity: 1; }
-  20%, 100% { opacity: 0; }
+@keyframes frameCycle {
+  0%      { opacity: 1; transform: translateY(0) translateZ(0) scale(1); }
+  19.999% { opacity: 1; transform: translateY(0) translateZ(0) scale(1); }
+  20%     { opacity: 0; transform: translateY(-2px) translateZ(0) scale(0.99); }
+  100%    { opacity: 0; transform: translateY(-2px) translateZ(0) scale(0.99); }
 }
