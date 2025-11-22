@@ -113,7 +113,6 @@ function showQuestion() {
 
   currentPlayer = null;
   toggleButtons();
-  startTimer();
 }
 
 // TIMER
@@ -244,7 +243,7 @@ function showTempFeedback(isCorrect, player) {
         } else {
             if (player === null && feedbackNegativeEl) {
                 const h2 = feedbackNegativeEl.querySelector("h2");
-                if (h2) h2.textContent = "TIME IS OVER!";
+                if (h2) h2.textContent = "YOUR TIME IS UP!";
             } 
             else if (feedbackNegativeEl) {
                 
@@ -295,6 +294,7 @@ window.addEventListener("keydown", (space) => {
         currentPlayer = "keyboard";
         toggleButtons();
         announcePlayer(player2Name);
+        startTimer();
     }
 
     if (currentPlayer === "keyboard") {
@@ -312,6 +312,7 @@ window.addEventListener("contextmenu", (mouse) => {
     currentPlayer = "mouse";
     toggleButtons();
     announcePlayer(player1Name);
+    startTimer();
 });
 
 function toggleButtons() {
