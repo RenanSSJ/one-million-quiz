@@ -240,17 +240,22 @@ function showTempFeedback(isCorrect, player) {
             if (feedbackPositivePlayerName) feedbackPositivePlayerName.textContent = playerName;
             if (feedbackPositiveEl) feedbackPositiveEl.style.display = "flex";
             if (feedbackNegativeEl) feedbackNegativeEl.style.display = "none";
-        } else {
+        } else {            
+            const timeUpImage = feedbackNegativeEl ? feedbackNegativeEl.querySelector("img") : null;
+
             if (player === null && feedbackNegativeEl) {
                 const h2 = feedbackNegativeEl.querySelector("h2");
-                if (h2) h2.textContent = "YOUR TIME IS UP!";
+                if (h2) h2.textContent = "TIME IS OVER!";
+                
+                // Time up image
+                if (timeUpImage) timeUpImage.src = "/images/miniSilvio_timeUp.png"; 
             } 
             else if (feedbackNegativeEl) {
-                
                 const h2 = feedbackNegativeEl.querySelector("h2");
                 if (h2) h2.innerHTML = `<span class="player-name">${playerName}</span> ANSWERED INCORRECTLY...`;
-                
+
                 if (feedbackNegativePlayerName) feedbackNegativePlayerName.textContent = playerName;
+                if (timeUpImage) timeUpImage.src = "/images/mini_silvio_sad.png"; 
             }
 
             if (feedbackPositiveEl) feedbackPositiveEl.style.display = "none";

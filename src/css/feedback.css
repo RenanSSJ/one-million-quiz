@@ -14,7 +14,7 @@
 }
 
 .feedback img {
-  width: 196px;
+  width: auto;
   height: 358px;
   object-fit: cover;
   margin-block: 60px;
