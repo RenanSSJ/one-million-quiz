@@ -279,6 +279,14 @@ function endGame() {
   window.location.href = "/winner";
 }
 
+//Announce player
+function announcePlayer(name) {
+  if (speechBubble && speechBubbleText) {
+    speechBubbleText.textContent = `${name} answers!`;
+    speechBubble.style.display = "block";
+  }
+}
+
 // PLAYER CONTROLS
 window.addEventListener("keydown", (space) => {
     if (space.code === "Space") {
@@ -286,6 +294,7 @@ window.addEventListener("keydown", (space) => {
         if (currentPlayer) return;
         currentPlayer = "keyboard";
         toggleButtons();
+        announcePlayer(player2Name);
     }
 
     if (currentPlayer === "keyboard") {
@@ -302,6 +311,7 @@ window.addEventListener("contextmenu", (mouse) => {
     if (currentPlayer) return;
     currentPlayer = "mouse";
     toggleButtons();
+    announcePlayer(player1Name);
 });
 
 function toggleButtons() {
