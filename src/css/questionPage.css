@@ -127,5 +127,7 @@ aside.silvio-section {
   color: var(--text-md);
 }
 
-
+#hurry-up-message {
+  font-size: 0.75rem;
+}
 

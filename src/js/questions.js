@@ -15,6 +15,7 @@ const player2Name = localStorage.getItem("player2") || "Jogador 2";
 
 // Elements
 const counterEl = document.querySelector(".counter");
+const hurryUpEl = document.getElementById("hurry-up-message"); 
 const imgSilvio = document.getElementById("normalSilvio");
 const speechBubble = document.getElementById("speechBubble");
 const questionText = document.getElementById("question-text");
@@ -141,6 +142,13 @@ function updateCounterDisplay() {
         counterEl.textContent = `${timeLeft} Seconds`;
         counterEl.style.color = timeLeft <= 5 ? "red" : "";
     }
+    if (hurryUpEl) {
+        if (timeLeft <= 5 && timeLeft > 0) {
+            hurryUpEl.textContent = "HURRY UP!";
+        } else {
+            hurryUpEl.textContent = ""; 
+        }
+    }  
 }
 
 // ANSWER HANDLING
