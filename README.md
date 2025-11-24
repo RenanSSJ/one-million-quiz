@@ -69,3 +69,15 @@ To run this project locally, you must start a web server (browser security preve
 ```bash
 git clone https://github.com/RenanSSJ/one-million-quiz
 cd one-million-quiz
+```
+Open it using VS Code Live Server
+
+Install the Live Server extension for Visual Studio Code and choose Open with Live Server.
+
+Open your browser and go to:
+
+```bash
+http://localhost:8000
+```
+
+
