@@ -12,8 +12,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid rgba(231, 231, 240, 0.63);
-  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.664);
+  border-radius: 25%;
   margin-bottom: 15px;
   width: 50px;
   height: auto;
