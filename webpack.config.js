@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // <-- NOVO IMPORT
 
 const faviconPath = path.resolve(__dirname, 'src/images/favicon.ico');
 
@@ -38,35 +39,38 @@ module.exports = {
   },
 
   plugins: [
-   
+
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html',
       chunks: ['main'],
-      favicon: faviconPath, 
+      favicon: faviconPath,
     }),
 
     new HtmlWebpackPlugin({
       template: './src/pages/question/index.html',
       filename: 'question/index.html',
       chunks: ['question'],
-      favicon: faviconPath, 
+      favicon: faviconPath,
     }),
 
     new HtmlWebpackPlugin({
       template: './src/pages/winner/index.html',
       filename: 'winner/index.html',
       chunks: ['winner'],
-      favicon: faviconPath, 
+      favicon: faviconPath,
     }),
-    
+
     new CopyWebpackPlugin({
       patterns: [
         { from: path.resolve(__dirname, 'src/images'), to: 'images' },
         { from: path.resolve(__dirname, 'src/data'), to: 'data' },
-
         { from: faviconPath, to: '' },
       ],
+    }),
+    
+    new MiniCssExtractPlugin({
+        filename: 'css/[name].css', 
     }),
   ],
 
@@ -74,7 +78,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'], 
       },
       {
         test: /\.(ttf|woff2?|eot|otf)$/i,
