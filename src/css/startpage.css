@@ -6,6 +6,20 @@
   width: 19.75rem;
   height: 9.8125rem;
 }
+
+.controlIcons {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgba(231, 231, 240, 0.63);
+  border-radius: 50%;
+  margin-bottom: 15px;
+  width: 50px;
+  height: auto;
+
+}
+
 .start-central-part {
   display: flex;
   justify-content: center;
